@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>16 de Mayo 💗</title>
+
+<link rel="stylesheet" href="idea.css">
+
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#0f0f0f;
+    overflow-x:hidden;
+    color:white;
+}
+
+/* Fondo animado */
+
+body::before{
+    content:'';
+    position:fixed;
+    inset:0;
+    background:
+    radial-gradient(circle at top left,#ff4fa344,transparent 30%),
+    radial-gradient(circle at bottom right,#ff89c544,transparent 30%);
+    z-index:-2;
+}
+
+/* Pantalla inicial */
+
+#inicio{
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:20px;
+}
+
+#inicio h1{
+    font-size:5rem;
+    margin-bottom:50px;
+    background:linear-gradient(90deg,#ff7dc0,#ffffff);
+    -webkit-text-fill-color:rgb(25, 81, 23);
+    border-style: ridge, outset;
+    border-radius: 100px;
+    width: 90%;
+    max-width: 800px;
+    text-decoration-style: double;
+    text-shadow: 1px 2px #999;
+    display: inline-block;
+}
+
+#inicio p{
+    opacity:0.8;
+    margin-bottom:35px;
+    font-size:1.1rem;
+}
+
+#botonInicio{
+    padding:16px 35px;
+    border:none;
+    border-radius:40px;
+    background:#ff4fa3;
+    color:white;
+    font-size:1rem;
+    cursor:pointer;
+    transition:0.3s;
+    box-shadow:0 0 20px #ff4fa388;
+}
+
+#botonInicio:hover{
+    transform:scale(1.07);
+}
+
+/* Contenido */
+
+#contenido{
+    display:none;
+    animation:fade 2s;
+}
+
+@keyframes fade{
+    from{opacity:0;}
+    to{opacity:1;}
+}
+
+/* Secciones */
+
+.seccion{
+    min-height:100vh;
+    padding:80px 20px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    
+}
+
+
+.card{
+    width:100%;
+    max-width:850px;
+    background:#181818;
+    border-radius:30px;
+    padding:35px;
+    box-shadow:0 0 30px rgba(255,255,255,0.05);
+    border:1px solid rgba(255,255,255,0.08);
+}
+
+
+
+
+
+/* Spotify estilo */
+
+.spotify{
+    display:flex;
+    gap:25px;
+    align-items:center;
+    flex-wrap:wrap;
+}
+
+.spotify img{
+    width:220px;
+    height:220px;
+    object-fit:cover;
+    border-radius:20px;
+    box-shadow:0 0 20px rgba(0,0,0,0.4);
+}
+
+.info{
+    flex:1;
+}
+
+.playing{
+    color:#1DB954;
+    font-size:0.9rem;
+    margin-bottom:10px;
+}
+
+.titulo{
+    font-size:2rem;
+    font-weight:700;
+}
+
+.artista{
+    opacity:0.7;
+    margin-top:8px;
+}
+
+/* Barra */
+
+.barra{
+    width:100%;
+    height:6px;
+    background:#333;
+    border-radius:20px;
+    margin-top:25px;
+    overflow:hidden;
+}
+
+.progreso{
+    width:65%;
+    height:100%;
+    background:#1DB954;
+    border-radius:20px;
+}
+
+/* Texto */
+
+.recuerdo{
+    margin-top:30px;
+    line-height:2;
+    font-size:1.05rem;
+    opacity:0.92;
+}
+
+/* Carta final */
+
+.cartaFinal{
+    text-align:center;
+    border: 4px solid #ff7eb6;
+    border-radius: 25px;
+    background: rgba(255,126,182,0.5);
+    border: 6px double pink;
+    box-shadow: 0 0 25px pink;
+    backdrop-filter: blur(10px);
+}
+
+.cartaFinal h2{
+    font-size:3rem;
+    margin-bottom:30px;
+    background:linear-gradient(90deg,#ff9ed0,#ffffff);
+    -webkit-text-fill-color:green;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 800px;
+  border-style: outset, double;
+  display: inline-block;
+  text-shadow: 1px 2px #999;
+}
+
+#textoFinal{
+    white-space:pre-line;
+    line-height:2;
+    font-size:1.2rem;
+}
+
+/* Contador */
+
+#contador{
+    margin-top:25px;
+    font-size:1.3rem;
+    color:#ffb3da;
+}
+
+/* Corazones */
+
+.corazon{
+    position:fixed;
+    bottom:-20px;
+    color:#ff7dc0;
+    animation:subir linear forwards;
+    z-index:-1;
+}
+
+@keyframes subir{
+    to{
+        transform:translateY(-120vh);
+        opacity:0;
+    }
+}
+
+/* Fotos flotantes */
+
+.fotos{
+    margin-top:40px;
+    display:flex;
+    gap:20px;
+    justify-content:center;
+    flex-wrap:wrap;
+}
+
+.fotos img{
+    width:180px;
+    border-radius:20px;
+    transform:rotate(-3deg);
+    transition:0.3s;
+    box-shadow:0 0 20px rgba(0,0,0,0.3);
+}
+
+.fotos img:nth-child(2){
+    transform:rotate(3deg);
+}
+
+.fotos img:hover{
+    transform:scale(1.05);
+}
+
+.fotoGrande{
+    width: 300px !important;
+    height: auto;
+    cursor:pointer
+}
+
+/* Responsive */
+
+@media(max-width:768px){
+
+    #inicio h1{
+        font-size:2.8rem;
+    }
+
+    .spotify{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .spotify img{
+        width:100%;
+        height:auto;
+    }
+
+    .titulo{
+        font-size:1.7rem;
+    }
+
+}
+
+</style>
+</head>
+<body>
+
+<!-- Música -->
+
+<audio id="musica" loop>
+<source src="" type="audio/mpeg">
+</audio>
+
+<!-- Inicio -->
+
+<section id="inicio">
+
+  <div class="container">
+  </div>
+        <h1>Nuestro Comienzo💚💗</h1>
+        <p>💚💗✨ 16 de Mayo 2025 - 16 de Mayo 2026 💚💗✨ </p>
+<p>
+Nuestra historia en canciones,
+recuerdos y momentos bonitos 💚💗✨
+</p>
+    </div>
+
+<button id="botonInicio" onclick="abrirPagina()">
+Empezar ✨💚💗
+</button>
+
+</section>
+
+<!-- Contenido -->
+
+<div id="contenido">
+
+<!-- Canción 1 -->
+
+<section class="seccion">
+
+<div class="card">
+
+<div class="spotify">
+
+<img src="Coqueta(2).jpg">
+
+<div class="info">
+
+<div class="playing">
+● Reproduciendo ahora
+</div>
+
+<div class="titulo">
+Coqueta
+</div>
+
+<div class="artista">
+Fuerza Rigida y Grupo Fronteras
+</div>
+
+<div class="barra">
+<div class="progreso"></div>
+</div>
+
+<div class="recuerdo">
+Esta canción marcó uno de nuestro inicio 💗
+Mientras Hablabamos con vista a la playa, hablamos nos reiamos y derrepente nos dimos cuenta 
+que sonaba un poquito muy seguido aunque no nos importo mucho.
+
+después de un año la volvemos a escuchar no como personas recien conociendose.
+Si no como pareja mientras miramos la playa y hablamos en modo recuerdo 🥹
+y tambien el "Son Reales ?"💗. 
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- Canción 2 -->
+
+<section class="seccion">
+
+<div class="card">
+
+<div class="spotify">
+
+<img src="ritmo de mi corazon.png">
+
+<div class="info">
+
+<div class="playing">
+● Sonando en nuestros recuerdos
+</div>
+
+<div class="titulo">
+El Ritmo De Mi Corazón 
+</div>
+
+<div class="artista">
+Grupo 5 💗
+</div>
+
+<div class="barra">
+<div class="progreso" style="width:80%;"></div>
+</div>
+
+<div class="recuerdo">
+Es inevitable recordar que despues de escuchar esta canción cuando nos conocimos,
+recuerdo verte manejando y mientras sonaba la música comenze a sentir ese ritmo si nos habiamos conocido 
+en persona como horas pero senti mucha conexión como te he dicho como que te he conocido antes, supe desde el primer momento
+que conectamos y mientras te miraba decia como dice la canción
+"Solo quiero estar contigo, ser lo que nunca has tenido", si creo que ambos nos dejamos colgado en nuestros cielos una nube con el nombre de cada uno
+y cuando nos miramos nos dejamos una canción.
+
+Tú llevas el ritmo de mi corazón y yo llevo el ritmo del tuyo💗.
+
+Te amo 💚💗
+.
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- Spotify Embed -->
+
+<section class="seccion">
+
+<div class="card">
+
+<h2 style="margin-bottom:25px;">
+Nuestra Playlist 💚💗
+</h2>
+
+<iframe data-testid="embed-iframe" style="border-radius:12px" 
+style="border-radius:12px" src="https://open.spotify.com/embed/playlist/6G84PLnKEO0U7KqKNh6dmD?utm_source=generator" 
+width="100%" height="352" frameBorder="0" 
+allowfullscreen="" allow="autoplay; 
+clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+loading="lazy">
+</iframe>
+
+<br><br>
+
+</div>
+
+</section>
+
+<!-- Carta Final -->
+
+<section class="seccion">
+
+<div class="card cartaFinal">
+
+<h2>
+Gracias por llegar a mi vida 🥹💚💗
+</h2>
+
+<div id="contador"></div>
+
+<p id="textoFinal"></p>
+
+<div class="fotos">
+
+<img src="manito.jpeg">
+<img src="poquito.jpeg">
+<a href="1666.jpeg" target="_blank">
+<img src="1666.jpeg" class="fotoGrande">
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+</div>
+
+<script>
+
+/* Abrir */
+
+function abrirPagina(){
+
+    document.getElementById("inicio").style.display="none";
+    document.getElementById("contenido").style.display="block";
+
+    document.getElementById("musica").play();
+
+    escribirCarta();
+}
+
+/* Carta escribiéndose */
+
+const texto = `💗Amado 16 de Mayo...💗
+
+Estoy tan agradecida de Dios porque te haya 
+puesto en mi camino incluso diria que desde mucho
+antes pero como dices nos encontramos en el 
+tiempo perfecto💗.
+
+Es inevitable escuchar nuestra playlist y recordar 
+como empezo nuestra linda historia y asi sucesivamente mientras 
+va avanzando la playlist, asi tambien iba avanzando nuestra historia
+Y como nuestro amor va creciendo más y más💗.
+
+Gracias por cada momento,
+cada conversación,
+cada abrazo,
+cada risa
+y cuando estas lejos o trabajando 
+te siento en cada canción de amor 💗 .
+
+Mayo 16 sonaba 444 , 111, ke pa-remix o QLOO cuando salio 
+y ya era nuestra tercera cita jiji.
+
+Ojitos Lindos que todavia recuerdo el lee el titulo. Te la dedico
+Ojos Color Sol mientras ibamos al mcdonals,
+Bemaste, vivo, destello, sparks o tema para jovenes enamorados mientras
+poco a poco sale la luna y sus estrellas a veces tomando tecito o estar en el auto simplemente💚.
+
+La Velocidad de la Luz, Cosas Que No Te Dije, Algo Magico, una loca historia de amor
+Corazón, Ella,Motor y Motivo, Eres Mi Bien, Cuando Nos Besamos y Amor 
+mientras cantamos juntos💚.
+
+Weltita, You Rock My World, Algo Que Me Gusta De Ti, Miamor, What's My Name 
+me lleva de inmediato a y si vamos a la playa y venirnos en la noche con la música a mil💚.
+
+Y si pudiera volver al inicio,
+volvería a elegirte una y otra vez. 💗
+
+Te Amo Más Que Mi Alma 💚💗
+
+Camila🥹💚💗✨`;
+
+let i = 0;
+
+function escribirCarta(){
+
+    if(i < texto.length){
+
+        document.getElementById("textoFinal").innerHTML += texto.charAt(i);
+
+        i++;
+
+        setTimeout(escribirCarta,40);
+    }
+}
+
+/* Corazones */
+
+setInterval(()=>{
+
+    const corazon = document.createElement("div");
+
+    corazon.classList.add("corazon");
+
+    corazon.innerHTML="💚💗";
+
+    corazon.style.left=Math.random()*100+"vw";
+
+    corazon.style.fontSize=(Math.random()*20+15)+"px";
+
+    corazon.style.animationDuration=(Math.random()*3+4)+"s";
+
+    document.body.appendChild(corazon);
+
+    setTimeout(()=>{
+        corazon.remove();
+    },7000);
+
+},300);
+
+/* Contador */
+
+const inicio = new Date("2025-05-16");
+
+function actualizarContador(){
+
+    const hoy = new Date();
+
+    const diferencia = hoy - inicio;
+
+    const dias = Math.floor(diferencia / (1000*60*60*24));
+
+    document.getElementById("contador").innerHTML =
+    `💗💚 Han pasado ${dias} días desde nuestro comienzo 💗💚`;
+}
+
+actualizarContador();
+
+</script>
+
+</body>
+</html>

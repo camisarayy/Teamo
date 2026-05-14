@@ -1,0 +1,274 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#0f0f0f;
+    overflow-x:hidden;
+    color:white;
+}
+
+/* Fondo animado */
+
+body::before{
+    content:'';
+    position:fixed;
+    inset:0;
+    background:
+    radial-gradient(circle at top left,#ff4fa344,transparent 30%),
+    radial-gradient(circle at bottom right,#ff89c544,transparent 30%);
+    z-index:-2;
+}
+
+/* Pantalla inicial */
+
+#inicio{
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:20px;
+}
+
+#inicio h1{
+    font-size:5rem;
+    margin-bottom:50px;
+    background:linear-gradient(90deg,#ff7dc0,#ffffff);
+    -webkit-text-fill-color:rgb(25, 81, 23);
+    border-style: ridge, outset;
+    border-radius: 100px;
+    width: 90%;
+    max-width: 800px;
+    text-decoration-style: double;
+    text-shadow: 1px 2px #999;
+    display: inline-block;
+}
+
+#inicio p{
+    opacity:0.8;
+    margin-bottom:35px;
+    font-size:1.1rem;
+}
+
+#botonInicio{
+    padding:16px 35px;
+    border:none;
+    border-radius:40px;
+    background:#ff4fa3;
+    color:white;
+    font-size:1rem;
+    cursor:pointer;
+    transition:0.3s;
+    box-shadow:0 0 20px #ff4fa388;
+}
+
+#botonInicio:hover{
+    transform:scale(1.07);
+}
+
+/* Contenido */
+
+#contenido{
+    display:none;
+    animation:fade 2s;
+}
+
+@keyframes fade{
+    from{opacity:0;}
+    to{opacity:1;}
+}
+
+/* Secciones */
+
+.seccion{
+    min-height:100vh;
+    padding:80px 20px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    
+}
+
+
+.card{
+    width:100%;
+    max-width:850px;
+    background:#181818;
+    border-radius:30px;
+    padding:35px;
+    box-shadow:0 0 30px rgba(255,255,255,0.05);
+    border:1px solid rgba(255,255,255,0.08);
+}
+
+
+
+
+
+/* Spotify estilo */
+
+.spotify{
+    display:flex;
+    gap:25px;
+    align-items:center;
+    flex-wrap:wrap;
+}
+
+.spotify img{
+    width:220px;
+    height:220px;
+    object-fit:cover;
+    border-radius:20px;
+    box-shadow:0 0 20px rgba(0,0,0,0.4);
+}
+
+.info{
+    flex:1;
+}
+
+.playing{
+    color:#1DB954;
+    font-size:0.9rem;
+    margin-bottom:10px;
+}
+
+.titulo{
+    font-size:2rem;
+    font-weight:700;
+}
+
+.artista{
+    opacity:0.7;
+    margin-top:8px;
+}
+
+/* Barra */
+
+.barra{
+    width:100%;
+    height:6px;
+    background:#333;
+    border-radius:20px;
+    margin-top:25px;
+    overflow:hidden;
+}
+
+.progreso{
+    width:65%;
+    height:100%;
+    background:#1DB954;
+    border-radius:20px;
+}
+
+/* Texto */
+
+.recuerdo{
+    margin-top:30px;
+    line-height:2;
+    font-size:1.05rem;
+    opacity:0.92;
+}
+
+/* Carta final */
+
+.cartaFinal{
+    text-align:center;
+}
+
+.cartaFinal h2{
+    font-size:3rem;
+    margin-bottom:30px;
+    background:linear-gradient(90deg,#ff9ed0,#ffffff);
+    -webkit-text-fill-color:green;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 800px;
+  border-style: outset, double;
+  display: inline-block;
+  text-shadow: 1px 2px #999;
+}
+
+#textoFinal{
+    white-space:pre-line;
+    line-height:2;
+    font-size:1.2rem;
+}
+
+/* Contador */
+
+#contador{
+    margin-top:25px;
+    font-size:1.3rem;
+    color:#ffb3da;
+}
+
+/* Corazones */
+
+.corazon{
+    position:fixed;
+    bottom:-20px;
+    color:#ff7dc0;
+    animation:subir linear forwards;
+    z-index:-1;
+}
+
+@keyframes subir{
+    to{
+        transform:translateY(-120vh);
+        opacity:0;
+    }
+}
+
+/* Fotos flotantes */
+
+.fotos{
+    margin-top:40px;
+    display:flex;
+    gap:20px;
+    justify-content:center;
+    flex-wrap:wrap;
+}
+
+.fotos img{
+    width:180px;
+    border-radius:20px;
+    transform:rotate(-3deg);
+    transition:0.3s;
+    box-shadow:0 0 20px rgba(0,0,0,0.3);
+}
+
+.fotos img:nth-child(2){
+    transform:rotate(3deg);
+}
+
+.fotos img:hover{
+    transform:scale(1.05);
+}
+
+/* Responsive */
+
+@media(max-width:768px){
+
+    #inicio h1{
+        font-size:2.8rem;
+    }
+
+    .spotify{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .spotify img{
+        width:100%;
+        height:auto;
+    }
+
+    .titulo{
+        font-size:1.7rem;
+    }
+
+}
