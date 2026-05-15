@@ -97,7 +97,7 @@ function actualizarContador(){
 
     const hoy = new Date();
 
-    const diferencia = hoy - inicio;
+    const diferencia = ahora - inicio;
 
     const dias = Math.floor(diferencia / (1000*60*60*24));
 
